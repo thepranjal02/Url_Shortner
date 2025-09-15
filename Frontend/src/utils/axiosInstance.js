@@ -1,4 +1,5 @@
 import axios from "axios"
+import API from "../api/api";
 
 const axiosInstance = axios.create({
     baseURL:import.meta.env.VITE_API_URL,
@@ -7,7 +8,7 @@ const axiosInstance = axios.create({
 })
 
 // Response interceptor
-axiosInstance.interceptors.response.use(
+API.interceptors.response.use(
     (response) => {
         // Any status code within the range of 2xx
         return response;
